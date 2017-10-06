@@ -1,0 +1,72 @@
+{{!< default}}
+
+<header>
+  <section class="site-banner hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <img class="site-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+      </div>
+    </div>
+  </section>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          {{#if @blog.navigation}}
+            {{navigation}}
+          {{/if}}
+        </div>
+        <div class="navbar-end">
+          {{#if @blog.twitter}}
+          <a class="navbar-item" href="" target="_blank">
+            <span class="icon">
+              <i class="fa fa-lg fa-twitter"></i>
+            </span>
+          </a>
+          {{/if}}
+          <a class="navbar-item" href="" target="_blank">
+            <span class="icon">
+              <i class="fa fa-lg fa-reddit"></i>
+            </span>
+          </a>
+          <a class="navbar-item" href="" target="_blank">
+            <span class="icon">
+              <i class="fa fa-lg fa-envelope"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-burger burger" data-target="navMobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="navMobile" class="navbar-menu is-hidden-desktop">
+        {{#if @blog.navigation}}
+          {{navigation}}
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="site-cover hero is-info is-medium {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+    <div class="hero-body">
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-quarters">
+          {{#foreach posts}}
+            {{> "post-card"}}
+          {{/foreach}}
+        </div>
+        <div class="column">
+          <h1>Latest Posts</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

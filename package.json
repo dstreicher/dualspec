@@ -1,0 +1,30 @@
+{
+  "name": "dualspec",
+  "author": "Dualspec Games <contact@dualspecgames.com>",
+  "description": "The ghost blog theme for dualspecgames.com.",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=1.2.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "0.5.3"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "4.0.0",
+    "gulp-clean-css": "3.9.0",
+    "gulp-concat": "2.6.1",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-sourcemaps": "2.6.1",
+    "gulp-sass": "3.1.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-zip": "4.0.0",
+    "rimraf": "2.6.2"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm run build && gulp watch",
+    "build": "rimraf assets/built/**/* && gulp build"
+  }
+}

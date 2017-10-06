@@ -1,0 +1,36 @@
+@import "config/variables";
+header {
+  .site-banner {
+    .hero-body {
+      padding: 1rem 1.5rem;
+    }
+    .site-logo {
+      max-height: 50px;
+    }
+  }
+  .navbar-menu {
+    .navbar-item {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      &.nav-current {
+        color: $light;
+      }
+    }
+  }
+  #navMobile {
+    background-color: $navbar-background-color;
+    margin-left: 1.5rem;
+  }
+  .navbar-burger {
+    color: $light;
+    margin-left: 1.5rem;
+  }
+}
+main {
+  .site-cover {
+    background-position: center;
+    background-size: contain;
+  }
+}
+
