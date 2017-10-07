@@ -58,12 +58,12 @@
   <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-8">
+        <div class="column is-7">
           {{#foreach posts}}
             {{> "post-card"}}
           {{/foreach}}
         </div>
-        <div class="column">
+        <div class="column is-offset-1">
           <div class="column">
             <h1 class="side-header">Latest Posts</h1>
              {{#get "posts" limit="3" as |recents|}}
