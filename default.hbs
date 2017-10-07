@@ -23,19 +23,11 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+      <div class="content">
+        <p class="footer-text">
+          <a href="{{@blog.url}}">{{@blog.title}} LLC</a> &copy; {{date format="YYYY"}}</section>
         </p>
-        <p>
-        {{#if @blog.twitter}}
-        <a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">
-          <span class="icon">
-            <i class="fa fa-lg fa-twitter"></i>
-          </span>
-        </a>
-        {{/if}}
-        </p>
+
       </div>
     </div>
   </footer>

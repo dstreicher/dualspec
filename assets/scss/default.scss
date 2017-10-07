@@ -1,2 +1,11 @@
 @import "config/variables";
 @import "bulma/bulma";
+
+.footer {
+  padding: 2rem 1.5rem 1rem;
+  .footer-text {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

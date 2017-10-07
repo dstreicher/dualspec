@@ -51,20 +51,46 @@
 </header>
 
 <main>
-  <section class="site-cover hero is-info is-medium {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+  <section class="site-cover hero is-dark is-medium {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
     <div class="hero-body">
     </div>
   </section>
   <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-three-quarters">
+        <div class="column is-8">
           {{#foreach posts}}
             {{> "post-card"}}
           {{/foreach}}
         </div>
         <div class="column">
-          <h1>Latest Posts</h1>
+          <div class="column">
+            <h1 class="side-header">Latest Posts</h1>
+             {{#get "posts" limit="3" as |recents|}}
+             <ul>
+              {{#foreach recents}}
+                  <li>
+                    <a class="recent-post" href="{{url}}">
+                      <h1 class="recent-title">{{title}}</h1>
+                      <h2 class="recent-date">{{date published_at format="MMMM DD, YYYY"}}</h2>
+                    </a>
+                  </li>
+                {{/foreach}}
+              {{/get}}
+            </ul>
+          </div>
+          <div class="column">
+            <h1 class="side-header">Categories</h1>
+            {{#get "tags" limit="all"}}
+            <div class="tags">
+              {{#foreach tags}}
+                <a href="/tag/{{slug}}"><span class="tag">{{name}}</span></a>
+              {{/foreach}}
+            </div>
+            {{/get}}
+          </div>
+        </div>
+
         </div>
       </div>
     </div>

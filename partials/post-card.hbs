@@ -27,18 +27,18 @@
 <div class="post-card">
   <section class="hero">
     <div class="hero-body">
-      <div class="container">
-        <h2 class="subtitle">
-          {{#if primary_tag}}
-            <span class="post-card-tags">{{primary_tag.name}}</span>
-          {{/if}}
-        </h2>
-        <h1 class="title">{{title}}</h1>
-        <h3 class="by-line">By {{author}} on {{date published_at format="MMMM DD, YYYY"}}</h3>
-      </div>
+      <h2 class="subtitle">
+        {{#if primary_tag}}
+          <a href="/tag/{{primary_tag.slug}}"><span class="post-card-tags">{{primary_tag.name}}</span></a>
+        {{/if}}
+      </h2>
+      <a href="{{url}}"><h1 class="title">{{title}}</h1></a>
+      <h3 class="by-line">By {{author}} on {{date published_at format="MMMM DD, YYYY"}}</h3>
     </div>
   </section>
   <section class="content">
     {{content words="100"}}
+  </section>
+  <section class="post-end">
   </section>
 </div>

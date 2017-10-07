@@ -31,6 +31,45 @@ main {
   .site-cover {
     background-position: center;
     background-size: contain;
+    background-repeat: repeat-x;
+  }
+  .side-header {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .recent-post {
+    display: block;
+    margin: 1rem 0rem;
+    .recent-title {
+      color: $dark;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .recent-date {
+      color: $gray;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  .tags {
+    margin-top: 1rem;
+    a {
+      padding: 0.0rem 0.3rem;
+      text-transform: uppercase;
+      &:hover {
+        .tag {
+          background-color: $dark;
+          color: $light;
+        }
+      }
+      .tag {
+        transition:.3s;
+        color: $gray;
+        background-color: $grayer;
+        border-radius: 0;
+      }
+    }
   }
 }
 
