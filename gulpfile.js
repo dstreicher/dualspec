@@ -6,6 +6,7 @@ gulp.task('build', ['scss', 'js']);
 gulp.task('scss', scss);
 gulp.task('js', js);
 gulp.task('watch', watch);
+gulp.task('zip', zip);
 
 function scss() {
   return gulp.src(['assets/**/*.scss'])
@@ -26,4 +27,12 @@ function js() {
 
 function watch() {
   gulp.watch('assets/**/*.scss', ['scss']);
+}
+
+function zip() {
+  var themeName = require('./package.json').name;
+  var filename = themeName + '.zip';
+  return gulp.src(['**', '!node_modules', '!node_modules/**'])
+    .pipe(plugins.zip(filename))
+    .pipe(gulp.dest('dist/'));
 }

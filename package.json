@@ -25,6 +25,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "npm run build && gulp watch",
-    "build": "rimraf assets/built/**/* && gulp build"
+    "build": "rimraf assets/built/**/* && gulp build",
+    "package": "npm run build && rimraf dist/** && gulp zip"
   }
 }
